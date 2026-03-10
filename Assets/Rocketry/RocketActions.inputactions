@@ -25,13 +25,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Rotation",
+                    "name": "3DRotation",
                     "type": "Value",
                     "id": "2ab38db5-b8d6-473c-bf86-cdfcdf5469ef",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "1DRotation",
+                    "type": "Button",
+                    "id": "75bd0e01-4102-4935-bca5-3f39c58dd2ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -53,7 +62,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -64,7 +73,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -75,7 +84,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -86,7 +95,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -97,7 +106,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -108,7 +117,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -119,7 +128,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
+                    "action": "3DRotation",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -133,6 +142,61 @@
                     "action": "ReverseThrust",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "f0f04228-bcb9-4fa9-b664-007edd1a7e98",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1DRotation",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Positive",
+                    "id": "7ad5a1e5-6417-481a-8e5e-687dd87e1f74",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1DRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Negative",
+                    "id": "4cd144d4-5fb5-4346-92f1-cb888cf2ba1f",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1DRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "b21635a5-212f-43e7-81f3-4f94374bd3d3",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1DRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Negative",
+                    "id": "70f0b7f3-9a06-4cfe-9854-c6800845da16",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1DRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
