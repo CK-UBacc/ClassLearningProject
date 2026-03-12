@@ -11,9 +11,9 @@ public class PlayerMoveRigidBody : MonoBehaviour
     InputAction jump;
 
     [SerializeField] float accelleration = 10;
-    [SerializeField] float deccelleration = -10;
-    [SerializeField] float jumpForce = 100;
-    [SerializeField] float maxVelocity = 10;
+    //[SerializeField] float deccelleration = -10;
+    //[SerializeField] float jumpForce = 100;
+    //[SerializeField] float maxVelocity = 10;
 
 
     private Rigidbody rb;

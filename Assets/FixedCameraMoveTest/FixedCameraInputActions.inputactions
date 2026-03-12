@@ -1,0 +1,99 @@
+{
+    "version": 1,
+    "name": "FixedCameraInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2e50387c-6ce9-40df-a7f2-d7ad9b30f898",
+            "actions": [
+                {
+                    "name": "Turn",
+                    "type": "Value",
+                    "id": "b444e7b2-05bb-4b65-9df1-4cdaf223c888",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Walk",
+                    "type": "Button",
+                    "id": "d79a9a49-b0fc-4912-baeb-074c2c058fcb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "0b19a55b-54a6-4336-8830-d21771d9d90e",
+                    "path": "2DVector",
+                    "interactions": "Hold(duration=0.1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "e94b204b-3ad6-4bfc-86f7-0e511ddfecfa",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "25d197db-2a3d-4980-83a6-3a4d896c6daf",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "b6b4771e-8b77-4c6d-9fb2-bb9c01279a00",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "62c695eb-a1f8-460f-9514-928a91888094",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "31928ccf-210b-431b-810e-f331c2be2efb",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
