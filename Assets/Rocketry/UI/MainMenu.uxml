@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="align-self: center; background-color: rgb(229, 229, 229);">
+        <ui:Label text="Rocketry" name="Title" style="-unity-text-align: upper-center; font-size: 36px; -unity-font-style: bold;"/>
+        <ui:Button text="Start" name="Start"/>
+        <ui:Button text="Options" name="Options"/>
+        <ui:Button text="Quit" name="Quit"/>
+    </ui:VisualElement>
+</ui:UXML>

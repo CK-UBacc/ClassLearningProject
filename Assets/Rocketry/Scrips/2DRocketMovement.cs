@@ -1,4 +1,4 @@
-using TMPro;
+//using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,10 +13,11 @@ public class FlatRocketMovement : MonoBehaviour
     [SerializeField] float fuel = 100f;
     [SerializeField] float maxFuel = 150f;
     [SerializeField] float fuelDecayRate = 0.1f;
-    [SerializeField] TMP_Text fuelDisplay;
+    //[SerializeField] TMP_Text fuelDisplay;
 
     [Header("Other")]
     [SerializeField] float CollisionVelocityDetonationThreshold = 1f;
+    [SerializeField] RocketryUI ui;
 
     [Header("Input Actions")]
     [SerializeField] InputActionReference inputRotate; //Take axis input for 2D rotation
@@ -25,22 +26,27 @@ public class FlatRocketMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    private void UpdateFuelDisplay()//Made a function so it could be called in multiple places. That didn't happen. Whatever.
-    {
-        fuelDisplay.text = fuel.ToString("F0");
-    }
+    //Old TMP UI implementation
+    //private void UpdateFuelDisplay()//Made a function so it could be called in multiple places. That didn't happen. Whatever.
+    //{
+    //    fuelDisplay.text = fuel.ToString("F0");
+    //}
 
     public void AddFuel()
     {
         fuel += 30;
         if (fuel > maxFuel) fuel = maxFuel;
+        ui.fuelUpdate(fuel);
     }
 
     private void Awake()
     {
         Debug.Log(gameObject.name + " awake triggered.");
+        Debug.Log("Fuel: " + fuel);
         rb = GetComponent<Rigidbody>();
+        if (rb != null) Debug.Log("Found player Rigid Body");
         //spwanPoint = transform.position;
+        //ui.fuelUpdate(fuel); // This line causes the null refrence error and causes the script component to disable itself. Changing to Start() doesn't cause the error for some reason?
     }
 
     private void FixedUpdate()
@@ -51,6 +57,7 @@ public class FlatRocketMovement : MonoBehaviour
             {
                 rb.AddRelativeTorque(0, 0, inputRotate.action.ReadValue<float>() * angularThrust, ForceMode.Force);
                 fuel -= fuelDecayRate;
+                
             }
             //Debug.Log("Input axis value: [" + inputRotate.action.ReadValue<float>() + "]");
 
@@ -65,8 +72,8 @@ public class FlatRocketMovement : MonoBehaviour
                 fuel -= fuelDecayRate;
             }
         }
-
-        UpdateFuelDisplay();//Updating the fuel display every frame isn't the best idea but it's probably better than updating it multiple times per frame
+        ui.fuelUpdate(fuel); //Updating the fuel display every frame isn't the best idea but it's probably better than updating it multiple times per frame
+        //UpdateFuelDisplay();
     }
 
     private void OnCollisionEnter(Collision collision)
