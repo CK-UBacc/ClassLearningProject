@@ -16,10 +16,18 @@ public class FixedCameraPlayerMove : MonoBehaviour
     private Quaternion lookDirection = Quaternion.identity;
     private bool turning = false;
     private bool walking = false;
+    private float _cameraAngle = 0;
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void UpdateCameraRotationValue()
+    {
+        _cameraAngle = mainCamera.transform.rotation.y * Mathf.Rad2Deg;
+        Debug.Log("Main Camera rotation [" + _cameraAngle + "]");
     }
 
     private void OnTurn(InputValue inputValue)
@@ -29,11 +37,13 @@ public class FixedCameraPlayerMove : MonoBehaviour
 
         //Player won't rotate if direction key is currently held down
         //Apears to be an input issue
+        UpdateCameraRotationValue();
         if (inputValue.Get<Vector2>() != Vector2.zero)
         {
             lookDirection = 
-                Quaternion.LookRotation(new Vector3(inputValue.Get<Vector2>().x, 0, inputValue.Get<Vector2>().y))//Must use * to add Quaternions
-
+                Quaternion.LookRotation(new Vector3(inputValue.Get<Vector2>().x, 0, inputValue.Get<Vector2>().y))
+                * Quaternion.Euler(0, _cameraAngle,0)
+                ;
                 //Need to figure out how to get the Quaternion of the main camera for only the Y axis. rotation.y returns radians and I need degrees
                 //* Quaternion.Euler(0, 45, 0) //Modify rotation based on mainCamera Y rotation
                 ;

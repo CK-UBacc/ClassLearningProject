@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Other/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Rocketry/Scenes/Menu.unity
@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rocketry/Scenes/Original.unity
     guid: d5c4bcc3f39e4d243968d2f1710065da
+  - enabled: 1
+    path: Assets/Rocketry/Scenes/Stage2.unity
+    guid: 38f5a705c09fc6249914bd3b2af53b8a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
